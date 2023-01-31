@@ -30,4 +30,11 @@ interface ProductRepository
      * @return Product
      */
     public function store(CreateProductData $createProductData): Product;
+
+    /**
+     * @param int $id
+     * @param CreateProductData $createProductData
+     * @return Product
+     */
+    public function updateById(int $id, CreateProductData $createProductData): Product;
 }

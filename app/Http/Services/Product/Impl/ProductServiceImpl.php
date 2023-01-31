@@ -66,4 +66,15 @@ class ProductServiceImpl implements ProductService
     {
         return $this->productRepository->store($createProductData);
     }
+
+    /**
+     * @param int $id
+     * @param CreateProductData $createProductData
+     * @return Product
+     * @throws Exception
+     */
+    public function update(int $id, CreateProductData $createProductData): Product
+    {
+        return $this->productRepository->updateById($id, $createProductData);
+    }
 }

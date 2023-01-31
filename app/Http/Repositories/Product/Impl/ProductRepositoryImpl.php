@@ -69,5 +69,27 @@ class ProductRepositoryImpl implements ProductRepository
         }
         return $product;
     }
+
+    /**
+     * @param int $id
+     * @param CreateProductData $createProductData
+     * @return Product
+     * @throws Exception
+     */
+    public function updateById(int $id, CreateProductData $createProductData): Product
+    {
+        DB::beginTransaction();
+        try {
+            $product = Product::findOrFail($id);
+            $product->fill((array)$createProductData);
+            $product->save();
+            DB::commit();
+        } catch (Exception $exception) {
+            DB::rollback();
+            Log::error($exception->getMessage());
+            throw $exception;
+        }
+        return $product;
+    }
 }
 

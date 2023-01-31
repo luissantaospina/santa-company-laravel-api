@@ -34,7 +34,7 @@ class ProductController extends Controller
      */
     public function destroy(int $id): JsonResponse
     {
-        return response()->json($this->productService->destroy($id));
+        return response()->json($this->productService->destroy($id), 204);
     }
 
     /**
@@ -64,9 +64,12 @@ class ProductController extends Controller
     }
 
     /**
+     * @param int $id
+     * @param Request $request
      * @return JsonResponse
      */
-    public function update(): JsonResponse
+    public function update(int $id, Request $request): JsonResponse
     {
+        return response()->json($this->productService->update($id, CreateProductData::from($request)), 204);
     }
 }

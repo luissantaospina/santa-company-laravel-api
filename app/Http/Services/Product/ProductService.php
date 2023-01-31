@@ -30,4 +30,11 @@ interface ProductService
      * @return Product
      */
     public function store(CreateProductData $createProductData): Product;
+
+    /**
+     * @param int $id
+     * @param CreateProductData $createProductData
+     * @return Product
+     */
+    public function update(int $id, CreateProductData $createProductData): Product;
 }
