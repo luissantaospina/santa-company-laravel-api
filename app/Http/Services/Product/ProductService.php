@@ -15,6 +15,12 @@ interface ProductService
 
     /**
      * @param int $id
+     * @return string
+     */
+    public function destroy(int $id): string;
+
+    /**
+     * @param int $id
      * @return Product
      */
     public function show(int $id): Product;

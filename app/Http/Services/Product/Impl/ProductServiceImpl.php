@@ -36,7 +36,16 @@ class ProductServiceImpl implements ProductService
      */
     public function index(): Collection
     {
-        return $this->productRepository->findAll();
+        return $this->productRepository->selectAll();
+    }
+
+    /**
+     * @param int $id
+     * @return string
+     */
+    public function destroy(int $id): string
+    {
+        return $this->productRepository->destroyById($id);
     }
 
     /**

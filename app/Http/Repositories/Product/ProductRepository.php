@@ -9,15 +9,21 @@ use Illuminate\Database\Eloquent\Collection;
 interface ProductRepository
 {
     /**
-     * @return Collection
-     */
-    public function findAll(): Collection;
-
-    /**
      * @param int $id
      * @return Product
      */
     public function findById(int $id): Product;
+
+    /**
+     * @param int $id
+     * @return string
+     */
+    public function destroyById(int $id): string;
+
+    /**
+     * @return Collection
+     */
+    public function selectAll(): Collection;
 
     /**
      * @param CreateProductData $createProductData

@@ -7,15 +7,29 @@ use App\Http\DataTransferObjects\Product\CreateProductData;
 use App\Http\Repositories\Product\ProductRepository;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Exception;
 
 class ProductRepositoryImpl implements ProductRepository
 {
     /**
-     * @return Collection
+     * @param int $id
+     * @return string
+     * @throws Exception
      */
-    public function findAll(): Collection
+    public function destroyById(int $id): string
     {
-        return Product::all();
+        DB::beginTransaction();
+        try {
+            Product::destroy($id);
+            DB::commit();
+        } catch (Exception $exception) {
+            DB::rollback();
+            Log::error($exception->getMessage());
+            throw $exception;
+        }
+        return 'El producto ha sido eliminado exitosamente';
     }
 
     /**
@@ -24,17 +38,36 @@ class ProductRepositoryImpl implements ProductRepository
      */
     public function findById(int $id): Product
     {
-        return 'hola';
+        return Product::findOrFail($id);
+    }
+
+    /**
+     * @return Collection
+     */
+    public function selectAll(): Collection
+    {
+        return Product::all();
     }
 
     /**
      * @param CreateProductData $createProductData
      * @return Product
+     * @throws Exception
      */
     public function store(CreateProductData $createProductData): Product
     {
-        $product = new Product();
-        $product->fill(json_decode(json_encode($createProductData, JSON_FORCE_OBJECT)));
+        DB::beginTransaction();
+        try {
+            $product = new Product();
+            $product->fill((array)$createProductData);
+            $product->save();
+            DB::commit();
+        } catch (Exception $exception) {
+            DB::rollback();
+            Log::error($exception->getMessage());
+            throw $exception;
+        }
         return $product;
     }
 }
+
