@@ -3,7 +3,7 @@
 
 namespace App\Http\Repositories\Product\Impl;
 
-use App\Http\DataTransferObjects\Product\CreateProductData;
+use App\Http\DataTransferObjects\Product\ProductData;
 use App\Http\Repositories\Product\ProductRepository;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
@@ -50,16 +50,16 @@ class ProductRepositoryImpl implements ProductRepository
     }
 
     /**
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      * @throws Exception
      */
-    public function store(CreateProductData $createProductData): Product
+    public function store(ProductData $productData): Product
     {
         DB::beginTransaction();
         try {
             $product = new Product();
-            $product->fill((array)$createProductData);
+            $product->fill((array)$productData);
             $product->save();
             DB::commit();
         } catch (Exception $exception) {
@@ -72,16 +72,16 @@ class ProductRepositoryImpl implements ProductRepository
 
     /**
      * @param int $id
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      * @throws Exception
      */
-    public function updateById(int $id, CreateProductData $createProductData): Product
+    public function updateById(int $id, ProductData $productData): Product
     {
         DB::beginTransaction();
         try {
             $product = Product::findOrFail($id);
-            $product->fill((array)$createProductData);
+            $product->fill((array)$productData);
             $product->save();
             DB::commit();
         } catch (Exception $exception) {

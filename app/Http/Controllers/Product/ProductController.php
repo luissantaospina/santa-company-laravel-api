@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Http\DataTransferObjects\Product\CreateProductData;
+use App\Http\DataTransferObjects\Product\ProductData;
 use App\Http\Services\Product\ProductService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -60,7 +60,7 @@ class ProductController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        return response()->json($this->productService->store(CreateProductData::from($request)), 201);
+        return response()->json($this->productService->store(ProductData::from($request)), 201);
     }
 
     /**
@@ -70,6 +70,6 @@ class ProductController extends Controller
      */
     public function update(int $id, Request $request): JsonResponse
     {
-        return response()->json($this->productService->update($id, CreateProductData::from($request)), 204);
+        return response()->json($this->productService->update($id, ProductData::from($request)), 204);
     }
 }

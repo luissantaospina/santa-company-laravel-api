@@ -2,7 +2,7 @@
 
 namespace App\Http\Services\Product\Impl;
 
-use App\Http\DataTransferObjects\Product\CreateProductData;
+use App\Http\DataTransferObjects\Product\ProductData;
 use App\Http\Repositories\Product\ProductRepository;
 use App\Http\Services\Product\ProductService;
 use App\Models\Product;
@@ -58,23 +58,23 @@ class ProductServiceImpl implements ProductService
     }
 
     /**
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      * @throws Exception
      */
-    public function store(CreateProductData $createProductData): Product
+    public function store(ProductData $productData): Product
     {
-        return $this->productRepository->store($createProductData);
+        return $this->productRepository->store($productData);
     }
 
     /**
      * @param int $id
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      * @throws Exception
      */
-    public function update(int $id, CreateProductData $createProductData): Product
+    public function update(int $id, ProductData $productData): Product
     {
-        return $this->productRepository->updateById($id, $createProductData);
+        return $this->productRepository->updateById($id, $productData);
     }
 }

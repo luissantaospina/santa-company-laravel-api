@@ -2,7 +2,7 @@
 
 namespace App\Http\Services\Product;
 
-use App\Http\DataTransferObjects\Product\CreateProductData;
+use App\Http\DataTransferObjects\Product\ProductData;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -26,15 +26,15 @@ interface ProductService
     public function show(int $id): Product;
 
     /**
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      */
-    public function store(CreateProductData $createProductData): Product;
+    public function store(ProductData $productData): Product;
 
     /**
      * @param int $id
-     * @param CreateProductData $createProductData
+     * @param ProductData $productData
      * @return Product
      */
-    public function update(int $id, CreateProductData $createProductData): Product;
+    public function update(int $id, ProductData $productData): Product;
 }

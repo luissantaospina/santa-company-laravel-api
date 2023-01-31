@@ -4,7 +4,7 @@ namespace App\Http\DataTransferObjects\Product;
 
 use Spatie\LaravelData\Data;
 
-class CreateProductData extends Data
+class ProductData extends Data
 {
     /**
      * @param int $amount
