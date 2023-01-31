@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Product;
 use App\Http\Controllers\Controller;
 use App\Http\DataTransferObjects\Product\CreateProductData;
 use App\Http\Services\Product\ProductService;
-use App\Models\Product;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 /**
  * Class VpcController
@@ -30,12 +28,11 @@ class ProductController extends Controller
     }
 
     /**
-     * @param int $id
      * @return JsonResponse
      */
-    public function index(int $id): JsonResponse
+    public function index(): JsonResponse
     {
-        return response()->json($this->productService->index($id));
+        return response()->json($this->productService->index());
     }
 
     /**
@@ -48,25 +45,25 @@ class ProductController extends Controller
     }
 
     /**
+     * @param int $id
      * @return JsonResponse
      */
-    public function show(Product $product)
+    public function show(int $id): JsonResponse
+    {
+        return response()->json($this->productService->index($id));
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function update(): JsonResponse
     {
     }
 
     /**
-     * @param int $id
      * @return JsonResponse
      */
-    public function update(Request $request, Product $product)
-    {
-    }
-
-    /**
-     * @param int $id
-     * @return JsonResponse
-     */
-    public function destroy(Product $product)
+    public function destroy(): JsonResponse
     {
     }
 }

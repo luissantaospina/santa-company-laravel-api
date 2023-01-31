@@ -6,8 +6,7 @@ use App\Http\DataTransferObjects\Product\CreateProductData;
 use App\Http\Repositories\Product\ProductRepository;
 use App\Http\Services\Product\ProductService;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\Collection;
 use Exception;
 
 /**
@@ -33,10 +32,18 @@ class ProductServiceImpl implements ProductService
     }
 
     /**
+     * @return Collection
+     */
+    public function index(): Collection
+    {
+        return $this->productRepository->findAll();
+    }
+
+    /**
      * @param int $id
      * @return Product
      */
-    public function index(int $id): Product
+    public function show(int $id): Product
     {
         return $this->productRepository->findById($id);
     }
