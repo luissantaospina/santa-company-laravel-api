@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,4 +14,5 @@ Route::group(['prefix' => 'v1'], function () {
     Route::put('product/{id}', [ProductController::class, 'update']);
     Route::get('users', [UserController::class, 'index']);
     Route::post('users', [UserController::class, 'login']);
+    Route::get('roles', [RoleController::class, 'index']);
 });
