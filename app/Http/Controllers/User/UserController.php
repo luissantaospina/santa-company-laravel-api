@@ -29,6 +29,15 @@ class UserController extends Controller
     }
 
     /**
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function destroy(int $id): JsonResponse
+    {
+        return response()->json($this->userService->destroy($id), 204);
+    }
+
+    /**
      * @return JsonResponse
      */
     public function index(): JsonResponse
@@ -43,5 +52,33 @@ class UserController extends Controller
     public function login(Request $request): JsonResponse
     {
         return response()->json($this->userService->login(UserData::from($request)), 201);
+    }
+
+    /**
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function show(int $id): JsonResponse
+    {
+        return response()->json($this->userService->show($id));
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function store(Request $request): JsonResponse
+    {
+        return response()->json($this->userService->store(UserData::from($request)), 201);
+    }
+
+    /**
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function update(int $id, Request $request): JsonResponse
+    {
+        return response()->json($this->userService->update($id, UserData::from($request)), 204);
     }
 }
