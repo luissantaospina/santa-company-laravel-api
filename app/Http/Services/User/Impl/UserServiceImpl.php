@@ -6,6 +6,7 @@ use App\Http\DataTransferObjects\User\UserData;
 use App\Http\Repositories\User\UserRepository;
 use App\Http\Services\User\UserService;
 use Exception;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class UserService
@@ -27,6 +28,14 @@ class UserServiceImpl implements UserService
     )
     {
         $this->userRepository = $userRepository;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function index(): Collection
+    {
+        return $this->userRepository->selectAll();
     }
 
     /**

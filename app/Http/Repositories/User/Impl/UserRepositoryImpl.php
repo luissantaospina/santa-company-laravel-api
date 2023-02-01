@@ -6,6 +6,7 @@ namespace App\Http\Repositories\User\Impl;
 use App\Http\DataTransferObjects\User\UserData;
 use App\Http\Repositories\User\UserRepository;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 
 class UserRepositoryImpl implements UserRepository
 {
@@ -28,6 +29,14 @@ class UserRepositoryImpl implements UserRepository
             ];
         }
         return $response;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function selectAll(): Collection
+    {
+        return User::all();
     }
 }
 

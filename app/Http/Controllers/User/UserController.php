@@ -29,6 +29,14 @@ class UserController extends Controller
     }
 
     /**
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return response()->json($this->userService->index());
+    }
+
+    /**
      * @param Request $request
      * @return JsonResponse
      */
