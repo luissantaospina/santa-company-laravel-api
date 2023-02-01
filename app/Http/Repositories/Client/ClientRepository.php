@@ -10,9 +10,9 @@ interface ClientRepository
 {
     /**
      * @param int $id
-     * @return Client
+     * @return mixed
      */
-    public function findById(int $id): Client;
+    public function findById(int $id): mixed;
 
     /**
      * @param int $id

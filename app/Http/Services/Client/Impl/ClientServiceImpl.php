@@ -50,9 +50,9 @@ class ClientServiceImpl implements ClientService
 
     /**
      * @param int $id
-     * @return Client
+     * @return mixed
      */
-    public function show(int $id): Client
+    public function show(int $id): mixed
     {
         return $this->clientRepository->findById($id);
     }

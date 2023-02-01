@@ -15,6 +15,9 @@ Route::group(['prefix' => 'v1'], function () {
     Route::delete('product/{id}', [ProductController::class, 'destroy']);
     Route::put('product/{id}', [ProductController::class, 'update']);
 
+    // Login
+    Route::post('users/login', [UserController::class, 'login']);
+
     // Users
     Route::get('users', [UserController::class, 'index']);
     Route::post('users/login', [UserController::class, 'login']);

@@ -35,11 +35,11 @@ class UserRepositoryImpl implements UserRepository
 
     /**
      * @param int $id
-     * @return User
+     * @return mixed
      */
-    public function findById(int $id): User
+    public function findById(int $id): mixed
     {
-        return User::findOrFail($id);
+        return User::findOrFail($id)->with('role')->get();
     }
     /**
      * @param UserLoginData $userLoginData
@@ -47,7 +47,10 @@ class UserRepositoryImpl implements UserRepository
      */
     public function login(UserLoginData $userLoginData): array
     {
-        $user = User::where('nombre', $userLoginData->nombre)->where('clave', $userLoginData->clave)->get();
+        $user = User::where('nombre', $userLoginData->nombre)
+            ->where('clave', $userLoginData->clave)
+            ->with('role')
+            ->get();
         if ($user) {
             $response = [
                 'status' => 'ok',

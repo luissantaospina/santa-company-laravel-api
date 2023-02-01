@@ -21,9 +21,9 @@ interface ClientService
 
     /**
      * @param int $id
-     * @return Client
+     * @return mixed
      */
-    public function show(int $id): Client;
+    public function show(int $id): mixed;
 
     /**
      * @param ClientData $clientData

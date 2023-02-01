@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Client extends Model
 {
@@ -26,4 +27,9 @@ class Client extends Model
         "updated_at",
         "created_at"
     ];
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class, 'rol_id', 'id');
+    }
 }

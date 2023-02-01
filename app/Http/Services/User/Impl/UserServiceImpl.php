@@ -61,9 +61,9 @@ class UserServiceImpl implements UserService
 
     /**
      * @param int $id
-     * @return User
+     * @return mixed
      */
-    public function show(int $id): User
+    public function show(int $id): mixed
     {
         return $this->userRepository->findById($id);
     }

@@ -34,11 +34,11 @@ class ClientRepositoryImpl implements ClientRepository
 
     /**
      * @param int $id
-     * @return Client
+     * @return mixed
      */
-    public function findById(int $id): Client
+    public function findById(int $id): mixed
     {
-        return Client::findOrFail($id);
+        return Client::findOrFail($id)->with('role')->get();
     }
 
     /**

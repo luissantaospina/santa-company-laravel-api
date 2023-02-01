@@ -11,9 +11,9 @@ interface UserRepository
 {
     /**
      * @param int $id
-     * @return User
+     * @return mixed
      */
-    public function findById(int $id): User;
+    public function findById(int $id): mixed;
 
     /**
      * @param int $id
