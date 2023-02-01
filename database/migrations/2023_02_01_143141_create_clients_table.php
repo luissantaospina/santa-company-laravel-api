@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 100);
+            $table->unsignedBigInteger('rol_id');
             $table->string('login', 50);
             $table->string('clave', 100);
-            $table->integer('rol');
+            $table->string('nombre', 100);
 
             $table->timestamps();
+
+            $table->foreign('rol_id')->references('id')->on('roles');
         });
     }
 

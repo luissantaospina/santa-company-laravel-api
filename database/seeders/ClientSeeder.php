@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Client;
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 
 
@@ -13,16 +14,16 @@ class ClientSeeder extends Seeder
         $clients = [
             [
                 'login' => 1,
-                'clave' => 432143,
-                'nombre' => 'Luis',
-                'rol' => 2
+                'clave' => 'clave',
+                'nombre' => 'Andres',
+                'rol_id' => 2
             ],
             [
-                'login' => 1,
-                'clave' => 765876,
-                'nombre' => 'Fernando',
-                'rol' => 3
-            ],
+                'login' => 2,
+                'clave' => 'clave',
+                'nombre' => 'Tattiana',
+                'rol_id' => 2
+            ]
         ];
         foreach ($clients as $client) {
             Client::updateOrCreate(['nombre' => $client['nombre']], $client);

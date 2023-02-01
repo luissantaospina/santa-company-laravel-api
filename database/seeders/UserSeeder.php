@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -13,16 +14,16 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'login' => 1,
-                'clave' => 432143,
+                'clave' => 'clave',
                 'nombre' => 'Luis',
-                'rol' => 2
+                'rol_id' => 1
             ],
             [
-                'login' => 1,
-                'clave' => 765876,
+                'login' => 2,
+                'clave' => 'clave',
                 'nombre' => 'Fernando',
-                'rol' => 3
-            ],
+                'rol_id' => 3
+            ]
         ];
         foreach ($users as $user) {
             User::updateOrCreate(['nombre' => $user['nombre']], $user);

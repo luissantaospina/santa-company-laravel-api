@@ -16,7 +16,7 @@ class Client extends Model
         'login',
         'clave',
         'nombre',
-        'rol'
+        'rol_id'
     ];
 
     /**
