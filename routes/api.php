@@ -4,6 +4,8 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Client\ClientController;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 

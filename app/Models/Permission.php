@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Role extends Model
+class Permission extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,8 @@ class Role extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre'
+        'permiso_id',
+        'rol_id'
     ];
 
     /**
@@ -35,8 +36,8 @@ class Role extends Model
         return $this->hasOne(User::class, 'id', 'rol_id');
     }
 
-    public function permissions()
+    public function roles()
     {
-        return $this->belongsToMany(Permission::class, 'permission_roles', 'rol_id', 'permiso_id');
+        return $this->belongsToMany(Role::class, 'permission_roles', 'permiso_id', 'rol_id')->with;
     }
 }

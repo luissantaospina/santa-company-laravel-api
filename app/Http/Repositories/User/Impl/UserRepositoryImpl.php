@@ -49,11 +49,12 @@ class UserRepositoryImpl implements UserRepository
     {
         $user = User::where('nombre', $userLoginData->nombre)
             ->where('clave', $userLoginData->clave)
-            ->with('role')
+            ->with('role.permissions')
             ->get();
         if ($user) {
             $response = [
                 'status' => 'ok',
+                'token' => strval(rand(1000, 9999)),
                 'response' => $user
             ];
         } else {

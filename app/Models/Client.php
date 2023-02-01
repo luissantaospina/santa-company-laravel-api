@@ -24,8 +24,10 @@ class Client extends Model
      * @var array<int, string>
      */
     protected $hidden = [
+        'clave',
         "updated_at",
-        "created_at"
+        "created_at",
+        'rol_id'
     ];
 
     public function role(): BelongsTo
