@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
 {
@@ -16,12 +15,12 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $roles = array(
-            [   'name' => config('app_roles_constant.ROLES.ADMINISTRADOR') ],
-            [   'name' => config('app_roles_constant.ROLES.CLIENTE') ],
-            [   'name' => config('app_roles_constant.ROLES.USUARIO') ]
+            [   'nombre' => config('app_roles_constant.ROLES.ADMINISTRADOR') ],
+            [   'nombre' => config('app_roles_constant.ROLES.CLIENTE') ],
+            [   'nombre' => config('app_roles_constant.ROLES.USUARIO') ]
         );
         foreach ($roles as $role) {
-            Role::updateOrCreate(['name' => $role['name']], $role);
+            Role::updateOrCreate(['nombre' => $role['nombre']], $role);
         }
     }
 }

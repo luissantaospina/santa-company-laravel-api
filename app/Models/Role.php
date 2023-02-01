@@ -13,14 +13,13 @@ class Role extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name'
+        'nombre'
     ];
 
     /**
      * @var array<int, string>
      */
     protected $hidden = [
-        'guard_name',
         "updated_at",
         "created_at"
     ];

@@ -16,7 +16,7 @@ class UserRepositoryImpl implements UserRepository
      */
     public function login(UserData $userData): array
     {
-        $user = User::where('email', $userData->email)->where('password', $userData->password)->get();
+        $user = User::where('nombre', $userData->nombre)->where('clave', $userData->clave)->get();
         if ($user) {
             $response = [
                 'status' => 'ok',
