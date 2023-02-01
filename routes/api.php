@@ -3,6 +3,7 @@
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Client\ClientController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,4 +16,5 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('users', [UserController::class, 'index']);
     Route::post('users', [UserController::class, 'login']);
     Route::get('roles', [RoleController::class, 'index']);
+    Route::get('clients', [ClientController::class, 'index']);
 });
