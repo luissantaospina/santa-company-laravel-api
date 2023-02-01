@@ -41,6 +41,7 @@ class UserRepositoryImpl implements UserRepository
     {
         return User::findOrFail($id)->with('role')->get();
     }
+
     /**
      * @param UserLoginData $userLoginData
      * @return array
