@@ -4,6 +4,7 @@
 namespace App\Http\Repositories\User\Impl;
 
 use App\Http\DataTransferObjects\User\UserData;
+use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Http\Repositories\User\UserRepository;
 use App\Models\User;
 use Exception;
@@ -41,12 +42,12 @@ class UserRepositoryImpl implements UserRepository
         return User::findOrFail($id);
     }
     /**
-     * @param UserData $userData
+     * @param UserLoginData $userLoginData
      * @return array
      */
-    public function login(UserData $userData): array
+    public function login(UserLoginData $userLoginData): array
     {
-        $user = User::where('nombre', $userData->nombre)->where('clave', $userData->clave)->get();
+        $user = User::where('nombre', $userLoginData->nombre)->where('clave', $userLoginData->clave)->get();
         if ($user) {
             $response = [
                 'status' => 'ok',

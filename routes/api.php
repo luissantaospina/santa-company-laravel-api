@@ -17,7 +17,7 @@ Route::group(['prefix' => 'v1'], function () {
 
     // Users
     Route::get('users', [UserController::class, 'index']);
-    Route::post('users', [UserController::class, 'login']);
+    Route::post('users/login', [UserController::class, 'login']);
     Route::post('users', [UserController::class, 'store']);
     Route::get('user/{id}', [UserController::class, 'show']);
     Route::delete('user/{id}', [UserController::class, 'destroy']);
@@ -31,10 +31,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::put('role/{id}', [RoleController::class, 'update']);
 
     // Clients
-    // todo: revisar
     Route::get('clients', [ClientController::class, 'index']);
     Route::post('clients', [ClientController::class, 'store']);
-
     Route::get('client/{id}', [ClientController::class, 'show']);
     Route::delete('client/{id}', [ClientController::class, 'destroy']);
     Route::put('client/{id}', [ClientController::class, 'update']);

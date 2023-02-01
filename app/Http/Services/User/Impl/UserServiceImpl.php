@@ -3,6 +3,7 @@
 namespace App\Http\Services\User\Impl;
 
 use App\Http\DataTransferObjects\User\UserData;
+use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Http\Repositories\User\UserRepository;
 use App\Http\Services\User\UserService;
 use App\Models\User;
@@ -40,13 +41,13 @@ class UserServiceImpl implements UserService
     }
 
     /**
-     * @param UserData $userData
+     * @param UserLoginData $userLoginData
      * @return array
      * @throws Exception
      */
-    public function login(UserData $userData): array
+    public function login(UserLoginData $userLoginData): array
     {
-        return $this->userRepository->login($userData);
+        return $this->userRepository->login($userLoginData);
     }
 
     /**

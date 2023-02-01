@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\DataTransferObjects\User\UserData;
+use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Http\Services\User\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -51,7 +52,7 @@ class UserController extends Controller
      */
     public function login(Request $request): JsonResponse
     {
-        return response()->json($this->userService->login(UserData::from($request)), 201);
+        return response()->json($this->userService->login(UserLoginData::from($request)), 201);
     }
 
     /**

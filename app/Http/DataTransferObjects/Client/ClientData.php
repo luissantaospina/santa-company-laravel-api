@@ -8,11 +8,15 @@ class ClientData extends Data
 {
     /**
      * @param string $nombre
+     * @param string $login
      * @param string $clave
+     * @param int $rol
      */
     public function __construct(
         public string $nombre,
-        public string $clave
+        public string $login,
+        public string $clave,
+        public int $rol,
     ) {}
 
     /**
@@ -23,7 +27,9 @@ class ClientData extends Data
         $stringRule = 'required|string';
         return [
             'nombre' => $stringRule,
-            'clave' => $stringRule
+            'login' => $stringRule,
+            'clave' => $stringRule,
+            'rol' => 'required|integer',
         ];
     }
 }

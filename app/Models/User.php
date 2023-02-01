@@ -21,6 +21,7 @@ class User extends Model
         'login',
         'clave',
         'nombre',
+        'rol'
     ];
 
     /**

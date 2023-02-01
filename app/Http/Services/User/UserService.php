@@ -3,6 +3,7 @@
 namespace App\Http\Services\User;
 
 use App\Http\DataTransferObjects\User\UserData;
+use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -14,10 +15,10 @@ interface UserService
     public function index(): Collection;
 
     /**
-     * @param UserData $userData
+     * @param UserLoginData $userLoginData
      * @return array
      */
-    public function login(UserData $userData): array;
+    public function login(UserLoginData $userLoginData): array;
 
     /**
      * @param int $id

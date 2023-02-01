@@ -3,6 +3,7 @@
 namespace App\Http\Repositories\User;
 
 use App\Http\DataTransferObjects\User\UserData;
+use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -21,10 +22,10 @@ interface UserRepository
     public function destroyById(int $id): string;
 
     /**
-     * @param UserData $userData
+     * @param UserLoginData $userLoginData
      * @return array
      */
-    public function login(UserData $userData): array;
+    public function login(UserLoginData $userLoginData): array;
 
     /**
      * @return Collection
