@@ -38,7 +38,7 @@ class ClientRepositoryImpl implements ClientRepository
      */
     public function findById(int $id): mixed
     {
-        return Client::findOrFail($id)->with('role')->get();
+        return Client::where('id', $id)->with('role')->get();
     }
 
     /**
@@ -71,12 +71,12 @@ class ClientRepositoryImpl implements ClientRepository
     }
 
     /**
-     * @param int $id
+     * @param string $id
      * @param ClientData $clientData
      * @return Client
      * @throws Exception
      */
-    public function updateById(int $id, ClientData $clientData): Client
+    public function updateById(string $id, ClientData $clientData): Client
     {
         DB::beginTransaction();
         try {

@@ -32,9 +32,9 @@ interface ClientRepository
     public function store(ClientData $clientData): Client;
 
     /**
-     * @param int $id
+     * @param string $id
      * @param ClientData $clientData
      * @return Client
      */
-    public function updateById(int $id, ClientData $clientData): Client;
+    public function updateById(string $id, ClientData $clientData): Client;
 }

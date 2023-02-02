@@ -32,9 +32,9 @@ interface ClientService
     public function store(ClientData $clientData): Client;
 
     /**
-     * @param int $id
+     * @param string $id
      * @param ClientData $clientData
      * @return Client
      */
-    public function update(int $id, ClientData $clientData): Client;
+    public function update(string $id, ClientData $clientData): Client;
 }

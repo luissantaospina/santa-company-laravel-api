@@ -68,12 +68,12 @@ class ClientServiceImpl implements ClientService
     }
 
     /**
-     * @param int $id
+     * @param string $id
      * @param ClientData $clientData
      * @return Client
      * @throws Exception
      */
-    public function update(int $id, ClientData $clientData): Client
+    public function update(string $id, ClientData $clientData): Client
     {
         return $this->clientRepository->updateById($id, $clientData);
     }
