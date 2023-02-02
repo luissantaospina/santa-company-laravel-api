@@ -39,7 +39,7 @@ class UserRepositoryImpl implements UserRepository
      */
     public function findById(int $id): mixed
     {
-        return User::where('id', $id)->with('role')->get();
+        return User::where('id', $id)->with('role')->first();
     }
 
     /**

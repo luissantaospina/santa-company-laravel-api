@@ -38,7 +38,7 @@ class ClientRepositoryImpl implements ClientRepository
      */
     public function findById(int $id): mixed
     {
-        return Client::where('id', $id)->with('role')->get();
+        return Client::where('id', $id)->with('role')->first();
     }
 
     /**
