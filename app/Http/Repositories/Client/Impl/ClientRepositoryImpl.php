@@ -46,7 +46,7 @@ class ClientRepositoryImpl implements ClientRepository
      */
     public function selectAll(): Collection
     {
-        return Client::all();
+        return Client::with('role')->get();
     }
 
     /**

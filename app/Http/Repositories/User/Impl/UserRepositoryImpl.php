@@ -72,7 +72,7 @@ class UserRepositoryImpl implements UserRepository
      */
     public function selectAll(): Collection
     {
-        return User::all();
+        return User::with('role')->get();
     }
 
     /**
