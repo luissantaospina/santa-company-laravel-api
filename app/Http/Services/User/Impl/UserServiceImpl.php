@@ -3,7 +3,6 @@
 namespace App\Http\Services\User\Impl;
 
 use App\Http\DataTransferObjects\User\UserData;
-use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Http\Repositories\User\UserRepository;
 use App\Http\Services\User\UserService;
 use App\Models\User;

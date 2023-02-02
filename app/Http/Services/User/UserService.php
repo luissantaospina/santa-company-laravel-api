@@ -3,7 +3,6 @@
 namespace App\Http\Services\User;
 
 use App\Http\DataTransferObjects\User\UserData;
-use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
