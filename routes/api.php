@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
@@ -39,4 +40,13 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('client/{id}', [ClientController::class, 'show']);
     Route::delete('client/{id}', [ClientController::class, 'destroy']);
     Route::put('client/{id}', [ClientController::class, 'update']);
+});
+
+Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router)
+{
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('me', [AuthController::class, 'me']);
+    Route::post('register', [AuthController::class, 'register']);
 });
