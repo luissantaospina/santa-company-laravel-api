@@ -11,7 +11,6 @@ class ProductData extends Data
      * @param string $categoria
      * @param string $codigo
      * @param string $descripcion
-     * @param boolean $esta_activo
      * @param string $nombre
      * @param float $precio
      */
@@ -20,7 +19,6 @@ class ProductData extends Data
         public string $categoria,
         public string $codigo,
         public string $descripcion,
-        public bool $esta_activo,
         public string $nombre,
         public float $precio
     ) {}
@@ -33,9 +31,7 @@ class ProductData extends Data
         $integerRule = 'required|integer';
         $floatRule = 'required|numeric';
         $stringRule = 'required|string';
-        $booleanRule = 'required|boolean';
         return [
-            'esta_activo' => $booleanRule,
             'cantidad' => $integerRule,
             'categoria' => $stringRule,
             'codigo' => $stringRule,
