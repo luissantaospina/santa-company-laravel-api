@@ -8,14 +8,14 @@ class UserData extends Data
 {
     /**
      * @param string $nombre
-     * @param string $login
-     * @param string $clave
+     * @param string $email
+     * @param string $password
      * @param int $rol_id
      */
     public function __construct(
         public string $nombre,
-        public string $login,
-        public string $clave,
+        public string $email,
+        public string $password,
         public int $rol_id,
     ) {}
 
@@ -27,8 +27,8 @@ class UserData extends Data
         $stringRule = 'required|string';
         return [
             'nombre' => $stringRule,
-            'login' => $stringRule,
-            'clave' => $stringRule,
+            'email' => $stringRule,
+            'password' => $stringRule,
             'rol_id' => 'required|integer',
         ];
     }

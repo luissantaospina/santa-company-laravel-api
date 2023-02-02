@@ -41,16 +41,6 @@ class UserServiceImpl implements UserService
     }
 
     /**
-     * @param UserLoginData $userLoginData
-     * @return array
-     * @throws Exception
-     */
-    public function login(UserLoginData $userLoginData): array
-    {
-        return $this->userRepository->login($userLoginData);
-    }
-
-    /**
      * @param int $id
      * @return string
      */

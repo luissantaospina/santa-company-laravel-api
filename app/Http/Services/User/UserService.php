@@ -15,12 +15,6 @@ interface UserService
     public function index(): Collection;
 
     /**
-     * @param UserLoginData $userLoginData
-     * @return array
-     */
-    public function login(UserLoginData $userLoginData): array;
-
-    /**
      * @param int $id
      * @return string
      */

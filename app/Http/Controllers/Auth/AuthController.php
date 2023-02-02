@@ -16,7 +16,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login']]);
     }
 
     /**
@@ -75,32 +75,5 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
-    }
-
-    /**
-     * Get the token array structure.
-     * @param Request $request
-     * @return JsonResponse
-     */
-    protected function register(Request $request): JsonResponse
-    {
-        $validator = Validator::make($request->all(), [
-            'nombre' => 'required',
-            'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|min:6|string',
-            'rol_id' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-        $user = User::create(array_merge(
-            $validator->validate(),
-            ['password' => bcrypt($request->password)]
-        ));
-
-        return response()->json([
-            'message' => 'Usuario registrado exitosamente',
-            'user' => $user
-        ], 201);
     }
 }

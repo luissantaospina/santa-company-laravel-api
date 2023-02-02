@@ -22,12 +22,6 @@ interface UserRepository
     public function destroyById(int $id): string;
 
     /**
-     * @param UserLoginData $userLoginData
-     * @return array
-     */
-    public function login(UserLoginData $userLoginData): array;
-
-    /**
      * @return Collection
      */
     public function selectAll(): Collection;

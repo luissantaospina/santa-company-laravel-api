@@ -8,7 +8,8 @@ use App\Http\Controllers\Client\ClientController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'v1'], function () {
+Route::group(['middleware' => 'api', 'prefix' => 'v1/auth'], function ()
+{
     // Products
     Route::get('products', [ProductController::class, 'index']);
     Route::post('products', [ProductController::class, 'store']);
@@ -40,13 +41,10 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('client/{id}', [ClientController::class, 'show']);
     Route::delete('client/{id}', [ClientController::class, 'destroy']);
     Route::put('client/{id}', [ClientController::class, 'update']);
-});
 
-Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router)
-{
+    // Auth
     Route::post('login', [AuthController::class, 'login']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::post('me', [AuthController::class, 'me']);
-    Route::post('register', [AuthController::class, 'register']);
 });

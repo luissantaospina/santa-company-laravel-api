@@ -43,31 +43,6 @@ class UserRepositoryImpl implements UserRepository
     }
 
     /**
-     * @param UserLoginData $userLoginData
-     * @return array
-     */
-    public function login(UserLoginData $userLoginData): array
-    {
-        $user = User::where('nombre', $userLoginData->nombre)
-            ->where('clave', $userLoginData->clave)
-            ->with('role.permissions')
-            ->get();
-        if ($user) {
-            $response = [
-                'status' => 'ok',
-                'token' => strval(rand(1000, 9999)),
-                'response' => $user
-            ];
-        } else {
-            $response = [
-                'status' => 'fail',
-                'response' => null
-            ];
-        }
-        return $response;
-    }
-
-    /**
      * @return Collection
      */
     public function selectAll(): Collection
@@ -85,7 +60,10 @@ class UserRepositoryImpl implements UserRepository
         DB::beginTransaction();
         try {
             $user = new User();
-            $user->fill((array)$userData);
+            $user->nombre = $userData->nombre;
+            $user->email = $userData->email;
+            $user->password = bcrypt($userData->password);
+            $user->rol_id = $userData->rol_id;
             $user->save();
             DB::commit();
         } catch (Exception $exception) {
