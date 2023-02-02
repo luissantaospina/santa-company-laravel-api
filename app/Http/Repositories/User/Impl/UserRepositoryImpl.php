@@ -4,7 +4,6 @@
 namespace App\Http\Repositories\User\Impl;
 
 use App\Http\DataTransferObjects\User\UserData;
-use App\Http\DataTransferObjects\User\UserLoginData;
 use App\Http\Repositories\User\UserRepository;
 use App\Models\User;
 use Exception;
@@ -40,6 +39,15 @@ class UserRepositoryImpl implements UserRepository
     public function findById(int $id): mixed
     {
         return User::where('id', $id)->with('role')->first();
+    }
+
+    /**
+     * @param string $email
+     * @return mixed
+     */
+    public function findByEmail(string $email): mixed
+    {
+        return User::where('email', $email)->with('role')->first();
     }
 
     /**

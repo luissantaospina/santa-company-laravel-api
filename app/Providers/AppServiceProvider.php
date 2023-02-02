@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Http\Repositories\Client\ClientRepository;
 use App\Http\Repositories\Client\Impl\ClientRepositoryImpl;
+use App\Http\Repositories\Permission\Impl\PermissionRepositoryImpl;
+use App\Http\Repositories\Permission\PermissionRepository;
 use App\Http\Repositories\Product\Impl\ProductRepositoryImpl;
 use App\Http\Repositories\Product\ProductRepository;
 use App\Http\Repositories\Role\Impl\RoleRepositoryImpl;
@@ -37,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(RoleRepository::class, RoleRepositoryImpl::class);
         $this->app->bind(ClientService::class, ClientServiceImpl::class);
         $this->app->bind(ClientRepository::class, ClientRepositoryImpl::class);
+        $this->app->bind(PermissionRepository::class, PermissionRepositoryImpl::class);
     }
 
     /**

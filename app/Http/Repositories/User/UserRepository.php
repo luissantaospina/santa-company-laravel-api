@@ -15,6 +15,12 @@ interface UserRepository
     public function findById(int $id): mixed;
 
     /**
+     * @param string $email
+     * @return mixed
+     */
+    public function findByEmail(string $email): mixed;
+
+    /**
      * @param int $id
      * @return string
      */
