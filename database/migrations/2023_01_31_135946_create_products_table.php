@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->boolean('esta_activo');
+            $table->boolean('esta_activo')->default(1);
             $table->integer('cantidad');
             $table->string('categoria', 128);
             $table->string('codigo', 20);

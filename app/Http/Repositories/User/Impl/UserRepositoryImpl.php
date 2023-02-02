@@ -39,8 +39,9 @@ class UserRepositoryImpl implements UserRepository
      */
     public function findById(int $id): mixed
     {
-        return User::findOrFail($id)->with('role')->get();
+        return User::where('id', $id)->with('role')->first();
     }
+
     /**
      * @param UserLoginData $userLoginData
      * @return array
@@ -71,7 +72,7 @@ class UserRepositoryImpl implements UserRepository
      */
     public function selectAll(): Collection
     {
-        return User::all();
+        return User::with('role')->get();
     }
 
     /**

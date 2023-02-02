@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Permission extends Model
@@ -36,8 +37,8 @@ class Permission extends Model
         return $this->hasOne(User::class, 'id', 'rol_id');
     }
 
-    public function roles()
+    public function roles(): BelongsToMany
     {
-        return $this->belongsToMany(Role::class, 'permission_roles', 'permiso_id', 'rol_id')->with;
+        return $this->belongsToMany(Role::class, 'permission_roles', 'permiso_id', 'rol_id');
     }
 }

@@ -10,13 +10,13 @@ class UserData extends Data
      * @param string $nombre
      * @param string $login
      * @param string $clave
-     * @param int $rol
+     * @param int $rol_id
      */
     public function __construct(
         public string $nombre,
         public string $login,
         public string $clave,
-        public int $rol,
+        public int $rol_id,
     ) {}
 
     /**
@@ -29,7 +29,7 @@ class UserData extends Data
             'nombre' => $stringRule,
             'login' => $stringRule,
             'clave' => $stringRule,
-            'rol' => 'required|integer',
+            'rol_id' => 'required|integer',
         ];
     }
 }

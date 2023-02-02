@@ -64,11 +64,11 @@ class ClientController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param string $id
      * @param Request $request
      * @return JsonResponse
      */
-    public function update(int $id, Request $request): JsonResponse
+    public function update(string $id, Request $request): JsonResponse
     {
         return response()->json($this->clientService->update($id, ClientData::from($request)), 204);
     }
