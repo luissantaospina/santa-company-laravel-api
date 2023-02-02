@@ -10,6 +10,7 @@ En la aplicación se combina los patrones de arquitectura MVC (Modelo vista cont
 ### Programas
 1. [x] Composer https://getcomposer.org/
 2. [x] MariaDB https://mariadb.org/
+3. [x] GIT
 
 ### Versiones
 1. [x] Composer v2.3.2
@@ -18,7 +19,7 @@ En la aplicación se combina los patrones de arquitectura MVC (Modelo vista cont
 4. [x] Laravel Framework v9.49.0
 
 ## Instalación
-1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `clone https://github.com/luissantaospina/aveonline-web.git`
+1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `git clone https://github.com/luissantaospina/aveonline-web.git`
 2. [x] Moverse a la carpeta del proyecto `cd aveonline-api`
 3. [x] Instalar dependencias `composer install`
 4. [x] Generar llave de seguridad con `php artisan key:generate`
