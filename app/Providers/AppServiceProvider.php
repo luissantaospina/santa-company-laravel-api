@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Http\Repositories\Client\ClientRepository;
 use App\Http\Repositories\Client\Impl\ClientRepositoryImpl;
+use App\Http\Repositories\Order\Impl\OrderRepositoryImpl;
+use App\Http\Repositories\Order\OrderRepository;
 use App\Http\Repositories\Permission\Impl\PermissionRepositoryImpl;
 use App\Http\Repositories\Permission\PermissionRepository;
 use App\Http\Repositories\Product\Impl\ProductRepositoryImpl;
@@ -14,6 +16,8 @@ use App\Http\Repositories\User\Impl\UserRepositoryImpl;
 use App\Http\Repositories\User\UserRepository;
 use App\Http\Services\Client\ClientService;
 use App\Http\Services\Client\Impl\ClientServiceImpl;
+use App\Http\Services\Order\Impl\OrderServiceImpl;
+use App\Http\Services\Order\OrderService;
 use App\Http\Services\Product\Impl\ProductServiceImpl;
 use App\Http\Services\Product\ProductService;
 use App\Http\Services\Role\Impl\RoleServiceImpl;
@@ -40,6 +44,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ClientService::class, ClientServiceImpl::class);
         $this->app->bind(ClientRepository::class, ClientRepositoryImpl::class);
         $this->app->bind(PermissionRepository::class, PermissionRepositoryImpl::class);
+        $this->app->bind(OrderService::class, OrderServiceImpl::class);
+        $this->app->bind(OrderRepository::class, OrderRepositoryImpl::class);
     }
 
     /**

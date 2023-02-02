@@ -33,4 +33,4 @@ En la aplicación se combina los patrones de arquitectura MVC (Modelo vista cont
 
 ## Restricciones técnicas
 1. [x] Por motivos de la librería `JWT` para laravel, el usuario debe tener dos campos llamados `password` e `email`, estos nombres son difícilmente alterables por dicha librería, por ende se decide dejarlos así y no cumplir con la convención de la tabla esperada, esto claramente por cuestiones de tiempo, ya que editar a profundidad la librería conllevaría trabajo arduo. 
-
+2. [x] Por convenciones de laravel y su manejo interno se decide dejar el nombre de las tablas en inglés, es de recalcar que este debería ser el estándar pero se busca cumplir a cabalidad con los criterios de aceptación.

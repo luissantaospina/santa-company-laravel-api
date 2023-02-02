@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
@@ -31,6 +32,13 @@ Route::group(['prefix' => 'v1'], function () {
         Route::get('role/{id}', [RoleController::class, 'show']);
         Route::delete('role/{id}', [RoleController::class, 'destroy']);
         Route::put('role/{id}', [RoleController::class, 'update']);
+
+        // Orders
+        Route::get('orders', [OrderController::class, 'index']);
+        Route::post('orders', [OrderController::class, 'store']);
+        Route::get('order/{id}', [OrderController::class, 'show']);
+        Route::delete('order/{id}', [OrderController::class, 'destroy']);
+        Route::put('order/{id}', [OrderController::class, 'update']);
 
         // Clients
         Route::get('clients', [ClientController::class, 'index']);
