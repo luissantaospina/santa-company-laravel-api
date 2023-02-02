@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Client;
-use App\Models\Role;
 use Illuminate\Database\Seeder;
 
 

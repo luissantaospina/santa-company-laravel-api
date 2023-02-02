@@ -47,15 +47,6 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function login(Request $request): JsonResponse
-    {
-        return response()->json($this->userService->login(UserLoginData::from($request)), 201);
-    }
-
-    /**
      * @param int $id
      * @return JsonResponse
      */
