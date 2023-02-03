@@ -29,6 +29,7 @@ En la aplicación se combina los patrones de arquitectura MVC (Modelo vista cont
 ## Inicio
 1. [x] Iniciar el servidor con `php artisan serve`
 2. [x] Generalmente se despliega en http://localhost:8000/ (verificar puesto que esto puede cambiar)
+3. [x] Se anexa colección de postman en caso de requerirse para las pruebas en el archivo llamado `Aveonline.postman_collection.json`
 
 ## Restricciones técnicas
 1. [x] Por motivos de la librería `JWT` para laravel, el usuario debe tener dos campos llamados `password` e `email`, estos nombres son difícilmente alterables por dicha librería, por ende se decide dejarlos así y no cumplir con la convención de la tabla esperada, esto claramente por cuestiones de tiempo, ya que editar a profundidad la librería conllevaría trabajo arduo. 
