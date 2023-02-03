@@ -1,17 +1,17 @@
 <?php
 
 
-namespace App\Http\Repositories\User\Impl;
+namespace App\Http\Repositories\Order\Impl;
 
-use App\Http\DataTransferObjects\User\UserData;
-use App\Http\Repositories\User\UserRepository;
-use App\Models\User;
+use App\Http\DataTransferObjects\Order\OrderData;
+use App\Http\Repositories\Order\OrderRepository;
+use App\Models\Order;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class UserRepositoryImpl implements UserRepository
+class OrderRepositoryImpl implements OrderRepository
 {
     /**
      * @param int $id
@@ -22,14 +22,14 @@ class UserRepositoryImpl implements UserRepository
     {
         DB::beginTransaction();
         try {
-            User::destroy($id);
+            Order::destroy($id);
             DB::commit();
         } catch (Exception $exception) {
             DB::rollback();
             Log::error($exception->getMessage());
             throw $exception;
         }
-        return 'El usuario ha sido eliminado exitosamente';
+        return 'La orden ha sido eliminado exitosamente';
     }
 
     /**
@@ -38,16 +38,7 @@ class UserRepositoryImpl implements UserRepository
      */
     public function findById(int $id): mixed
     {
-        return User::where('id', $id)->with('role')->first();
-    }
-
-    /**
-     * @param string $email
-     * @return mixed
-     */
-    public function findByEmail(string $email): mixed
-    {
-        return User::where('email', $email)->with('role')->first();
+        return Order::where('id', $id)->with('client')->first();
     }
 
     /**
@@ -55,53 +46,50 @@ class UserRepositoryImpl implements UserRepository
      */
     public function selectAll(): Collection
     {
-        return User::with('role')->get();
+        return Order::with('client')->get();
     }
 
     /**
-     * @param UserData $userData
-     * @return User
+     * @param OrderData $orderData
+     * @return Order
      * @throws Exception
      */
-    public function store(UserData $userData): User
+    public function store(OrderData $orderData): Order
     {
         DB::beginTransaction();
         try {
-            $user = new User();
-            $user->nombre = $userData->nombre;
-            $user->email = $userData->email;
-            $user->password = bcrypt($userData->password);
-            $user->rol_id = $userData->rol_id;
-            $user->save();
+            $order = new Order();
+            $order->fill((array)$orderData);
+            $order->save();
             DB::commit();
         } catch (Exception $exception) {
             DB::rollback();
             Log::error($exception->getMessage());
             throw $exception;
         }
-        return $user;
+        return $order;
     }
 
     /**
      * @param int $id
-     * @param UserData $userData
-     * @return User
+     * @param OrderData $orderData
+     * @return Order
      * @throws Exception
      */
-    public function updateById(int $id, UserData $userData): User
+    public function updateById(int $id, OrderData $orderData): Order
     {
         DB::beginTransaction();
         try {
-            $user = User::findOrFail($id);
-            $user->fill((array)$userData);
-            $user->save();
+            $order = Order::findOrFail($id);
+            $order->fill((array)$orderData);
+            $order->save();
             DB::commit();
         } catch (Exception $exception) {
             DB::rollback();
             Log::error($exception->getMessage());
             throw $exception;
         }
-        return $user;
+        return $order;
     }
 }
 

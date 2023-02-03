@@ -13,6 +13,9 @@ return [
         ],
         'VER_ORDENES_COMPRA' => [
             'description' => 'Ver sus órdenes de compra'
+        ],
+        'ADMINISTRAR_SISTEMA' => [
+            'description' => 'Administrar sistema'
         ]
     ]
 ];

@@ -18,7 +18,8 @@ class PermissionSeeder extends Seeder
             [   'nombre' => config('app_permissions_constant.PERMISSIONS.REVISAR_ORDENES_COMPRA.description'), ],
             [   'nombre' => config('app_permissions_constant.PERMISSIONS.CARGAR_PRODUCTOS.description') ],
             [   'nombre' => config('app_permissions_constant.PERMISSIONS.INGRESAR_ORDEN_COMPRA.description') ],
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.VER_ORDENES_COMPRA.description') ]
+            [   'nombre' => config('app_permissions_constant.PERMISSIONS.VER_ORDENES_COMPRA.description') ],
+            [   'nombre' => config('app_permissions_constant.PERMISSIONS.ADMINISTRAR_SISTEMA.description') ],
         );
         foreach ($permissions as $permission) {
             Permission::updateOrCreate(['nombre' => $permission['nombre']], $permission);

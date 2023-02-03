@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class PermissionRole extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,9 @@ class PermissionRole extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre'
+        'cliente_id',
+        'codigo',
+        'precio'
     ];
 
     /**
@@ -26,8 +28,13 @@ class PermissionRole extends Model
         "created_at"
     ];
 
-    public function permissions(): HasMany
+    public function client(): HasOne
     {
-        return $this->hasMany(Permission::class, 'id', 'permiso_id');
+        return $this->hasOne(Client::class, 'id', 'cliente_id');
+    }
+
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Permission::class, 'order_products', 'orden_id', 'producto_id');
     }
 }
