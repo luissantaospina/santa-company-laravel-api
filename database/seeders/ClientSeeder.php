@@ -12,20 +12,20 @@ class ClientSeeder extends Seeder
     {
         $clients = [
             [
-                'login' => 1,
+                'login' => "clientecarulla@empresa.co",
                 'clave' => 'clave',
                 'nombre' => 'Andres',
                 'rol_id' => 2
             ],
             [
-                'login' => 2,
+                'login' => "clienteexito@empresa.co",
                 'clave' => 'clave',
-                'nombre' => 'Tattiana',
+                'nombre' => 'Tatiana',
                 'rol_id' => 2
             ]
         ];
         foreach ($clients as $client) {
-            Client::updateOrCreate(['nombre' => $client['nombre']], $client);
+            Client::updateOrCreate(['login' => $client['login']], $client);
         }
     }
 }
