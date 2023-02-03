@@ -698,7 +698,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Card\",\r\n    \"clave\": \"2000\",\r\n    \"login\": \"sda\",\r\n    \"rol_id\": 1\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Card\",\r\n    \"clave\": \"2000\",\r\n    \"login\": \"sda\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -732,7 +732,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Card\",\r\n    \"clave\": \"2000\",\r\n    \"login\": \"sda\",\r\n    \"rol_id\": 1\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Card\",\r\n    \"clave\": \"2000\",\r\n    \"login\": \"sda\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -772,7 +772,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"administrador@aveonline.co\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"email\": \"administrador@aveonline.co\",\r\n    \"password\": \"AVEOnline77\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -986,7 +986,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2NzUzNzkzMjksImV4cCI6MTY3NTM4MjkyOSwibmJmIjoxNjc1Mzc5MzI5LCJqdGkiOiJsbVFGdDc4b2tXWjRpcHlnIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ksLoNv3g1nce0SetRGkXbAu3ZnAVzn7r8kxvzQvOT9s",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2NzUzOTA0NTIsImV4cCI6MTY3NTM5NDA1MiwibmJmIjoxNjc1MzkwNDUyLCJqdGkiOiJ0UnFzUjZjY0JaNTFTNVVQIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Eh4tpE4FwwJeiWPur7RYnT8bTxi1_fMIgCMETBj6Rhk",
 									"type": "string"
 								}
 							]
@@ -995,7 +995,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"codigo\": \"JIK12\",\r\n    \"precio\": 1000324\r\n}",
+							"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"codigo\": \"JIK12\",\r\n    \"precio\": 1000324,\r\n    \"fecha_compra\": \"2023-08-10\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1039,7 +1039,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"codigo\": \"JIK12\",\r\n    \"precio\": 1000324\r\n}",
+							"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"codigo\": \"JIK12\",\r\n    \"precio\": 1000324,\r\n    \"fecha_compra\": \"2023-08-10\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
