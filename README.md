@@ -22,10 +22,9 @@ En la aplicación se combina los patrones de arquitectura MVC (Modelo vista cont
 1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-api.git con el comando `git clone https://github.com/luissantaospina/aveonline-api.git`
 2. [x] Moverse a la carpeta del proyecto `cd aveonline-api`
 3. [x] Instalar dependencias `composer install`
-4. [x] Generar llave de seguridad con `php artisan key:generate`
-5. [x] Entrar al proyecto y duplicar el archivo `.env.example` renombrelo así `.env`
-6. [x] **_IMPORTANTE_** en su ambiente local debe crear una base de datos de mariaDB llamada `aveonline`
-7. [x] Ejecutar migraciones y seeders para crear y llenar las tablas en la base de datos anteriormente creada con `php artisan migrate --seed`
+4. [x] Entrar al proyecto y duplicar el archivo `.env.example` renombrelo así `.env`
+5. [x] **_IMPORTANTE_** en su ambiente local debe crear una base de datos de mariaDB llamada `aveonline`
+6. [x] Ejecutar migraciones y seeders para crear y llenar las tablas en la base de datos anteriormente creada con `php artisan migrate --seed`
 
 ## Inicio
 1. [x] Iniciar el servidor con `php artisan serve`
