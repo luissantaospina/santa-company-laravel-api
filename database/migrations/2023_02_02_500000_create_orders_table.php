@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->string('codigo', 50);
             $table->double('precio');
+            $table->date('fecha_compra');
 
             $table->timestamps();
 

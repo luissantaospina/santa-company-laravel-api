@@ -17,7 +17,8 @@ class Order extends Model
     protected $fillable = [
         'cliente_id',
         'codigo',
-        'precio'
+        'precio',
+        'fecha_compra'
     ];
 
     /**
