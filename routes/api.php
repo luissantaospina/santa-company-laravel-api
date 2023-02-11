@@ -13,7 +13,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::group(['middleware' => 'jwt.verify', 'prefix' => 'auth'], function () {
         // Users
         Route::get('users', [UserController::class, 'index']);
-        Route::post('users/login', [UserController::class, 'login']);
         Route::post('users', [UserController::class, 'store']);
         Route::get('user/{id}', [UserController::class, 'show']);
         Route::delete('user/{id}', [UserController::class, 'destroy']);
