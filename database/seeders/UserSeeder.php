@@ -14,20 +14,20 @@ class UserSeeder extends Seeder
             [
                 'email' => "administrador@aveonline.co",
                 'password' => bcrypt('AVEOnline77'),
-                'nombre' => 'Jhon Doe',
-                'rol_id' => 1
+                'name' => 'Jhon Doe',
+                'role_id' => 1
             ],
             [
                 'email' => "cliente@aveonline.co",
                 'password' =>  bcrypt('AVEOnline77'),
-                'nombre' => 'Fernando Doe',
-                'rol_id' => 2
+                'name' => 'Fernando Doe',
+                'role_id' => 2
             ],
             [
                 'email' => "usuario@aveonline.co",
                 'password' =>  bcrypt('AVEOnline77'),
-                'nombre' => 'Luis Doe',
-                'rol_id' => 3
+                'name' => 'Luis Doe',
+                'role_id' => 3
             ],
         ];
         foreach ($users as $user) {

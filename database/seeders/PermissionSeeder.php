@@ -9,20 +9,19 @@ class PermissionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $permissions = array(
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.REVISAR_ORDENES_COMPRA.description'), ],
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.CARGAR_PRODUCTOS.description') ],
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.INGRESAR_ORDEN_COMPRA.description') ],
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.VER_ORDENES_COMPRA.description') ],
-            [   'nombre' => config('app_permissions_constant.PERMISSIONS.ADMINISTRAR_SISTEMA.description') ],
+            [   'name' => config('app_permissions_constant.PERMISSIONS.REVISAR_ORDENES_COMPRA.description'), ],
+            [   'name' => config('app_permissions_constant.PERMISSIONS.CARGAR_PRODUCTOS.description') ],
+            [   'name' => config('app_permissions_constant.PERMISSIONS.INGRESAR_ORDEN_COMPRA.description') ],
+            [   'name' => config('app_permissions_constant.PERMISSIONS.VER_ORDENES_COMPRA.description') ],
+            [   'name' => config('app_permissions_constant.PERMISSIONS.ADMINISTRAR_SISTEMA.description') ],
         );
         foreach ($permissions as $permission) {
-            Permission::updateOrCreate(['nombre' => $permission['nombre']], $permission);
+            Permission::updateOrCreate(['name' => $permission['name']], $permission);
         }
     }
 }

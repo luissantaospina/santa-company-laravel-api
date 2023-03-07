@@ -59,10 +59,10 @@ class ClientRepositoryImpl implements ClientRepository
         DB::beginTransaction();
         try {
             $client = new Client();
-            $client->nombre = $clientData->nombre;
-            $client->clave = $clientData->clave;
-            $client->login = $clientData->login;
-            $client->rol_id = 2;
+            $client->name = $clientData->name;
+            $client->password = $clientData->password;
+            $client->email = $clientData->email;
+            $client->role_id = 2;
             $client->save();
             DB::commit();
         } catch (Exception $exception) {

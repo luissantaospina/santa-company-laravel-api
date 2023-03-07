@@ -68,10 +68,10 @@ class UserRepositoryImpl implements UserRepository
         DB::beginTransaction();
         try {
             $user = new User();
-            $user->nombre = $userData->nombre;
+            $user->name = $userData->name;
             $user->email = $userData->email;
             $user->password = bcrypt($userData->password);
-            $user->rol_id = $userData->rol_id;
+            $user->role_id = $userData->role_id;
             $user->save();
             DB::commit();
         } catch (Exception $exception) {

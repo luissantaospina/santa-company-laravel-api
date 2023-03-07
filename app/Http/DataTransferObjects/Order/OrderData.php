@@ -7,16 +7,16 @@ use Spatie\LaravelData\Data;
 class OrderData extends Data
 {
     /**
-     * @param int $cliente_id
-     * @param string $codigo
-     * @param float $precio
-     * @param string $fecha_compra
+     * @param int $client_id
+     * @param string $code
+     * @param float $price
+     * @param string $date_purchase
      */
     public function __construct(
-        public int $cliente_id,
-        public string $codigo,
-        public float $precio,
-        public string $fecha_compra
+        public int $client_id,
+        public string $code,
+        public float $price,
+        public string $date_purchase
     ) {}
 
     /**
@@ -25,10 +25,10 @@ class OrderData extends Data
     public static function rules(): array
     {
         return [
-            'cliente_id' => 'required|integer',
-            'codigo' => 'required|string',
-            'precio' => 'required|numeric',
-            'fecha_compra' => 'required|string',
+            'client_id' => 'required|integer',
+            'code' => 'required|string',
+            'price' => 'required|numeric',
+            'date_purchase' => 'required|string',
         ];
     }
 }

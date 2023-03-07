@@ -7,20 +7,20 @@ use Spatie\LaravelData\Data;
 class ProductData extends Data
 {
     /**
-     * @param int $cantidad
-     * @param string $categoria
-     * @param string $codigo
-     * @param string $descripcion
-     * @param string $nombre
-     * @param float $precio
+     * @param int $amount
+     * @param string $category
+     * @param string $code
+     * @param string $description
+     * @param string $name
+     * @param float $price
      */
     public function __construct(
-        public int $cantidad,
-        public string $categoria,
-        public string $codigo,
-        public string $descripcion,
-        public string $nombre,
-        public float $precio
+        public int $amount,
+        public string $category,
+        public string $code,
+        public string $description,
+        public string $name,
+        public float $price
     ) {}
 
     /**
@@ -32,12 +32,12 @@ class ProductData extends Data
         $floatRule = 'required|numeric';
         $stringRule = 'required|string';
         return [
-            'cantidad' => $integerRule,
-            'categoria' => $stringRule,
-            'codigo' => $stringRule,
-            'descripcion' => $stringRule,
-            'nombre' => $stringRule,
-            'precio' => $floatRule
+            'amount' => $integerRule,
+            'category' => $stringRule,
+            'code' => $stringRule,
+            'description' => $stringRule,
+            'name' => $stringRule,
+            'price' => $floatRule
         ];
     }
 }

@@ -12,26 +12,26 @@ class OrderSeeder extends Seeder
     {
         $orders = [
             [
-                'codigo' => "EDG657",
-                'precio' => 145454557,
-                'cliente_id' => 1,
-                'fecha_compra' => "2022-05-18 11:58:54",
+                'code' => "EDG657",
+                'price' => 145454557,
+                'client_id' => 1,
+                'date_purchase' => "2022-05-18 11:58:54",
             ],
             [
-                'codigo' => "KJU789",
-                'precio' => 1452143257,
-                'cliente_id' => 1,
-                'fecha_compra' => "2022-05-18 11:58:54",
+                'code' => "KJU789",
+                'price' => 1452143257,
+                'client_id' => 1,
+                'date_purchase' => "2022-05-18 11:58:54",
             ],
             [
-                'codigo' => "KLJ890",
-                'precio' => 12312354557,
-                'cliente_id' => 1,
-                'fecha_compra' => "2022-05-18 11:58:54",
+                'code' => "KLJ890",
+                'price' => 12312354557,
+                'client_id' => 1,
+                'date_purchase' => "2022-05-18 11:58:54",
             ],
         ];
         foreach ($orders as $order) {
-            Order::updateOrCreate(['codigo' => $order['codigo']], $order);
+            Order::updateOrCreate(['code' => $order['code']], $order);
         }
     }
 }

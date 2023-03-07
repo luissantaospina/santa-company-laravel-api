@@ -8,29 +8,27 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('permission_roles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('permiso_id');
-            $table->unsignedBigInteger('rol_id');
+            $table->unsignedBigInteger('permission_id');
+            $table->unsignedBigInteger('role_id');
 
             $table->timestamps();
 
-            $table->foreign('rol_id')->references('id')->on('roles');
-            $table->foreign('permiso_id')->references('id')->on('permissions');
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('permission_id')->references('id')->on('permissions');
         });
     }
 
-    /**
+    /**pe
      * Reverse the migrations.
-     *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('permission_roles');
     }

@@ -7,10 +7,10 @@ use Spatie\LaravelData\Data;
 class RoleData extends Data
 {
     /**
-     * @param string $nombre
+     * @param string $name
      */
     public function __construct(
-        public string $nombre
+        public string $name
     ) {}
 
     /**
@@ -20,7 +20,7 @@ class RoleData extends Data
     {
         $stringRule = 'required|string';
         return [
-            'nombre' => $stringRule
+            'name' => $stringRule
         ];
     }
 }

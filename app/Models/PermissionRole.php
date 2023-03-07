@@ -15,7 +15,7 @@ class PermissionRole extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre'
+        'name'
     ];
 
     /**
@@ -28,6 +28,6 @@ class PermissionRole extends Model
 
     public function permissions(): HasMany
     {
-        return $this->hasMany(Permission::class, 'id', 'permiso_id');
+        return $this->hasMany(Permission::class, 'id', 'permission_id');
     }
 }

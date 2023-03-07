@@ -7,14 +7,14 @@ use Spatie\LaravelData\Data;
 class ClientData extends Data
 {
     /**
-     * @param string $nombre
-     * @param string $login
-     * @param string $clave
+     * @param string $name
+     * @param string $email
+     * @param string $password
      */
     public function __construct(
-        public string $nombre,
-        public string $login,
-        public string $clave
+        public string $name,
+        public string $email,
+        public string $password
     ) {}
 
     /**
@@ -24,9 +24,9 @@ class ClientData extends Data
     {
         $stringRule = 'required|string';
         return [
-            'nombre' => $stringRule,
-            'login' => $stringRule,
-            'clave' => $stringRule
+            'name' => $stringRule,
+            'email' => $stringRule,
+            'password' => $stringRule
         ];
     }
 }

@@ -15,7 +15,7 @@ class Role extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre'
+        'name'
     ];
 
     /**
@@ -33,11 +33,11 @@ class Role extends Model
 
     public function user(): HasOne
     {
-        return $this->hasOne(User::class, 'id', 'rol_id');
+        return $this->hasOne(User::class, 'id', 'role_id');
     }
 
     public function permissions(): BelongsToMany
     {
-        return $this->belongsToMany(Permission::class, 'permission_roles', 'rol_id', 'permiso_id');
+        return $this->belongsToMany(Permission::class, 'permission_roles', 'role_id', 'permission_id');
     }
 }

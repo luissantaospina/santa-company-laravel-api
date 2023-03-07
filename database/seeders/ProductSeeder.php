@@ -12,26 +12,26 @@ class ProductSeeder extends Seeder
     {
         $products = [
             [
-                'esta_activo' => 1,
-                'cantidad' => 12,
-                'categoria' => 'Alimentos',
-                'codigo' => 'ALI123',
-                'descripcion' => 'Endulzante',
-                'nombre' => 'Panela',
-                'precio' => 12000
+                'is_active' => 1,
+                'amount' => 12,
+                'category' => 'Alimentos',
+                'code' => 'ALI123',
+                'description' => 'Endulzante',
+                'name' => 'Panela',
+                'price' => 12000
             ],
             [
-                'esta_activo' => 1,
-                'cantidad' => 89,
-                'categoria' => 'Aseo',
-                'codigo' => 'ASE123',
-                'descripcion' => 'Casa',
-                'nombre' => 'Jabon',
-                'precio' => 42000
+                'is_active' => 1,
+                'amount' => 89,
+                'category' => 'Aseo',
+                'code' => 'ASE123',
+                'description' => 'Casa',
+                'name' => 'Jabon',
+                'price' => 42000
             ]
         ];
         foreach ($products as $product) {
-            Product::updateOrCreate(['nombre' => $product['nombre']], $product);
+            Product::updateOrCreate(['name' => $product['name']], $product);
         }
     }
 }

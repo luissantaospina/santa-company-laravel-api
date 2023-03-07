@@ -9,10 +9,9 @@ class PermissionRoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $permissionRoles = array(
             [1, 1],
@@ -29,8 +28,8 @@ class PermissionRoleSeeder extends Seeder
 
         foreach ($permissionRoles as $permissionRole) {
             $permission = new PermissionRole();
-            $permission->rol_id = $permissionRole[0];
-            $permission->permiso_id = $permissionRole[1];
+            $permission->role_id = $permissionRole[0];
+            $permission->permission_id = $permissionRole[1];
             $permission->save();
         }
     }

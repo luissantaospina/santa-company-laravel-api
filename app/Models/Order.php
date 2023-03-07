@@ -15,10 +15,10 @@ class Order extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'cliente_id',
-        'codigo',
-        'precio',
-        'fecha_compra'
+        'client_id',
+        'code',
+        'price',
+        'date_purchase'
     ];
 
     /**
@@ -31,11 +31,11 @@ class Order extends Model
 
     public function client(): HasOne
     {
-        return $this->hasOne(Client::class, 'id', 'cliente_id');
+        return $this->hasOne(Client::class, 'id', 'client_id');
     }
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Permission::class, 'order_products', 'orden_id', 'producto_id');
+        return $this->belongsToMany(Permission::class, 'order_products', 'order_id', 'product_id');
     }
 }

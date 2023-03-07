@@ -15,8 +15,8 @@ class Permission extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'permiso_id',
-        'rol_id'
+        'permission_id',
+        'role_id'
     ];
 
     /**
@@ -34,11 +34,11 @@ class Permission extends Model
 
     public function user(): HasOne
     {
-        return $this->hasOne(User::class, 'id', 'rol_id');
+        return $this->hasOne(User::class, 'id', 'role_id');
     }
 
     public function roles(): BelongsToMany
     {
-        return $this->belongsToMany(Role::class, 'permission_roles', 'permiso_id', 'rol_id');
+        return $this->belongsToMany(Role::class, 'permission_roles', 'permission_id', 'role_id');
     }
 }

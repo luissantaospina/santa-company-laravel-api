@@ -14,24 +14,24 @@ class Client extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'login',
-        'clave',
-        'nombre',
-        'rol_id'
+        'email',
+        'password',
+        'name',
+        'role_id'
     ];
 
     /**
      * @var array<int, string>
      */
     protected $hidden = [
-        'clave',
+        'password',
         "updated_at",
         "created_at",
-        'rol_id'
+        'role_id'
     ];
 
     public function role(): BelongsTo
     {
-        return $this->belongsTo(Role::class, 'rol_id', 'id');
+        return $this->belongsTo(Role::class, 'role_id', 'id');
     }
 }

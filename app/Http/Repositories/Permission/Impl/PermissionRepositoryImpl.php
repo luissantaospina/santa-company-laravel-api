@@ -19,7 +19,7 @@ class PermissionRepositoryImpl implements PermissionRepository
         $permissions = [];
         foreach ($permissionsRole as $valor) {
             foreach ($valor->permissions as $valor) {
-                $permissions[] = $valor->nombre;
+                $permissions[] = $valor->name;
             }
         }
         return $permissions;

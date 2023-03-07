@@ -10,17 +10,17 @@ return new class extends Migration
      * Run the migrations.
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->boolean('esta_activo')->default(1);
-            $table->integer('cantidad');
-            $table->string('categoria', 128);
-            $table->string('codigo', 20);
-            $table->text('descripcion');
-            $table->string('nombre', 128);
-            $table->double('precio');
+            $table->boolean('is_active')->default(1);
+            $table->integer('amount');
+            $table->string('category', 128);
+            $table->string('code', 20);
+            $table->text('description');
+            $table->string('name', 128);
+            $table->double('price');
 
             $table->timestamps();
         });
@@ -30,7 +30,7 @@ return new class extends Migration
      * Reverse the migrations.
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('products');
     }

@@ -17,10 +17,10 @@ class User extends Authenticatable implements JWTSubject
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre',
+        'name',
         'email',
         'password',
-        'rol_id'
+        'role_id'
     ];
 
     /**
@@ -31,7 +31,7 @@ class User extends Authenticatable implements JWTSubject
         'remember_token',
         "updated_at",
         "created_at",
-        'rol_id'
+        'role_id'
     ];
 
     protected $casts = [
@@ -55,6 +55,6 @@ class User extends Authenticatable implements JWTSubject
 
     public function role(): BelongsTo
     {
-        return $this->belongsTo(Role::class, 'rol_id', 'id');
+        return $this->belongsTo(Role::class, 'role_id', 'id');
     }
 }

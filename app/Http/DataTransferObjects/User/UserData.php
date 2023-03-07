@@ -7,16 +7,16 @@ use Spatie\LaravelData\Data;
 class UserData extends Data
 {
     /**
-     * @param string $nombre
+     * @param string $name
      * @param string $email
      * @param string $password
-     * @param int $rol_id
+     * @param int $role_id
      */
     public function __construct(
-        public string $nombre,
+        public string $name,
         public string $email,
         public string $password,
-        public int $rol_id,
+        public int $role_id,
     ) {}
 
     /**
@@ -26,10 +26,10 @@ class UserData extends Data
     {
         $stringRule = 'required|string';
         return [
-            'nombre' => $stringRule,
+            'name' => $stringRule,
             'email' => $stringRule,
             'password' => $stringRule,
-            'rol_id' => 'required|integer',
+            'role_id' => 'required|integer',
         ];
     }
 }

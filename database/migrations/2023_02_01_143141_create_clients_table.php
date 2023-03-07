@@ -8,30 +8,28 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('rol_id');
-            $table->string('login', 50);
-            $table->string('clave', 100);
-            $table->string('nombre', 100);
+            $table->unsignedBigInteger('role_id');
+            $table->string('email', 50);
+            $table->string('password', 100);
+            $table->string('name', 100);
 
             $table->timestamps();
 
-            $table->foreign('rol_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('clients');
     }
