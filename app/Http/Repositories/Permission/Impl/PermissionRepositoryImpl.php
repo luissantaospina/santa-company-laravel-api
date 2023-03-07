@@ -15,7 +15,7 @@ class PermissionRepositoryImpl implements PermissionRepository
      */
     public function findByRole(int $role): array
     {
-        $permissionsRole = PermissionRole::where('rol_id', $role)->with('permissions')->get();
+        $permissionsRole = PermissionRole::where('role_id', $role)->with('permissions')->get();
         $permissions = [];
         foreach ($permissionsRole as $valor) {
             foreach ($valor->permissions as $valor) {
